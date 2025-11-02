@@ -1,0 +1,463 @@
+/* Variabel CSS untuk konsistensi warna dan memudahkan perubahan */
+:root {
+    --primary: #1a237e;
+    --secondary: #3949ab;
+    --accent: #ff5722;
+    --light: #e8eaf6;
+    --dark: #0d1440;
+    --text: #333;
+    --gray: #f5f5f5;
+}
+
+/* Reset CSS dasar untuk menghilangkan margin dan padding default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Gaya untuk body halaman */
+body {
+    background-color: var(--gray);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Container untuk membatasi lebar konten dan memusatkannya */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header dan navigasi */
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem 0;
+    position: sticky; /* Membuat header tetap terlihat saat di-scroll */
+    top: 0;
+    z-index: 100; /* Memastikan header berada di atas elemen lain */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya untuk navigasi */
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap; /* Membungkus menu jika tidak cukup ruang */
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Mencegah teks membungkus */
+}
+
+nav ul li a i {
+    margin-right: 8px;
+}
+
+/* Efek hover pada link navigasi */
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Gaya untuk link navigasi yang aktif */
+nav ul li a.active {
+    background-color: var(--secondary);
+    font-weight: bold;
+}
+
+/* Hero Section - Bagian utama halaman */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url(teknologi.png);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    color: var(--accent);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin: 0 auto 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+}
+
+/* Gaya untuk semua section */
+section {
+    padding: 80px 0;
+}
+
+/* Gaya untuk judul section */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--primary);
+    font-size: 2.5rem;
+    position: relative;
+}
+
+/* Garis dekoratif di bawah judul section */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* About Section - Tentang festival */
+.about {
+    background-color: white;
+} 
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 30px;
+}
+
+.about-text p {
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 1.5em;
+    line-height: 1.8;
+    text-indent: 0;
+}
+
+.about-meta {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Highlight Section - Highlight acara */
+.highlight {
+    background-color: var(--light);
+}
+
+.highlight-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.highlight-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--secondary); /* Garis berwarna di atas card */
+}
+
+/* Efek hover pada card highlight */
+.highlight-card:hover {
+    transform: translateY(-10px);
+}
+
+.highlight-card i {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.highlight-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+/* Benefit Section - Benefit untuk peserta */
+.benefit {
+    background-color: white;
+}
+
+.benefit-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.benefit-card {
+    background-color: var(--light);
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Efek hover pada card benefit */
+.benefit-card:hover {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.benefit-card:hover h3,
+.benefit-card:hover i {
+    color: white;
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+/* Info Section - Informasi penting */
+.info {
+    background-color: var(--light);
+}
+
+.info-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.info-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-card i {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Team Section - Profil tim */
+.team {
+    background-color: var(--light);
+}
+
+.team-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.team-member {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Efek hover pada card anggota tim */
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.member-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.team-member h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.team-member .role {
+    color: var(--accent);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.team-member .bio {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Contact Section - Informasi kontak */
+.contact {
+    background-color: white;
+}
+
+.contact-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    background-color: var(--light);
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.contact-info i {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.contact-info h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+/* Footer - Bagian akhir halaman */
+footer {
+    background-color: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Tombol */
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+/* Efek hover pada tombol */
+.btn:hover {
+    background-color: #e64a19;
+}
+
+/* Media queries untuk responsivitas pada perangkat mobile */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+}
